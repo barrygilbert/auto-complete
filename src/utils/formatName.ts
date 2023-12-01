@@ -2,7 +2,7 @@
 const regex = /^(Mr\.?|Mrs\.?|Ms\.?|Miss)?\s?([A-Za-z]+)\s(.+)$/;
 
 // Convert a full name to proper format
-const formatName = (name: string): string => {
+export const formatName = (name: string): string => {
   const found = name.match(regex);
   if (!found) {
     return name;
@@ -16,4 +16,3 @@ const formatName = (name: string): string => {
   return `${lastName}, ${firstName}`;
 };
 
-export default formatName;

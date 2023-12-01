@@ -1,2 +1,2 @@
 
-export * as formatName from './formatName';
+export * from './formatName';

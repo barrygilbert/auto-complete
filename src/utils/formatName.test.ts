@@ -1,4 +1,4 @@
-import formatName from './formatName';
+import { formatName } from './formatName';
 
 test('formatName', () => {
   expect(formatName('Mr. John Smith')).toBe('Smith, John (Mr.)');
