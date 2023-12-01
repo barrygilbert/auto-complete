@@ -1,4 +1,4 @@
-import { AmendedUser, User } from "../types";
+import { AmendedUser, User } from '../types';
 
 const mockUser: User = {
   id: 1,
