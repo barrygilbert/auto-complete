@@ -1,4 +1,4 @@
-import { User } from '../types/user';
+import { User } from '../types';
 
 const URL = 'https://jsonplaceholder.typicode.com/users';
 
