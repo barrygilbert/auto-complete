@@ -1,7 +1,7 @@
 # Auto Complete Search
 
 ## Requirements
-- Use of the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- Use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - Use the [Material UI Autocomplete component](https://mui.com/material-ui/react-autocomplete/)
 - Any React framework or packages you see fit to use
 - Use JSON Placeholder API’s [Users endpoint](https://jsonplaceholder.typicode.com/users)
