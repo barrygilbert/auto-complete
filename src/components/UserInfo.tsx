@@ -6,7 +6,7 @@ export interface UserInfoProps {
 }
 
 const UserInfo: React.FC<UserInfoProps> = ({ user }) => (
-  <div className="user-info">
+  <div className="user-info" data-testid="user-info">
     <div>{user.formattedName}</div>
     <div>{user.address.street}</div>
     <div>{user.address.suite}</div>
