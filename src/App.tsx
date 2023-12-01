@@ -8,17 +8,22 @@ import { UserInfo } from './components';
 
 const App: React.FC = () => {
   const [users, setUsers] = React.useState<AmendedUser[]>([]);
+  const [error, setError] = React.useState<Error | null>(null);
   const [selectedUser, setSelectedUser] = React.useState<AmendedUser | null>(null);
 
   useEffect(() => {
-    fetchUsers().then((fetchedUsers) => {
-      const amendedUsers = fetchedUsers.map((user) => ({
-        ...user,
-        formattedName: formatName(user.name),
-      }));
-      amendedUsers.sort((a, b) => a.formattedName.localeCompare(b.formattedName));
-      setUsers(amendedUsers);
-    });
+    fetchUsers()
+      .then((fetchedUsers) => {
+        const amendedUsers = fetchedUsers.map((user) => ({
+          ...user,
+          formattedName: formatName(user.name),
+        }));
+        amendedUsers.sort((a, b) => a.formattedName.localeCompare(b.formattedName));
+        setUsers(amendedUsers);
+      })
+      .catch((error) => {
+        setError(error);
+      });
   }, []);
 
   const onChange = useCallback((_: SyntheticEvent, value: AmendedUser | null) => {
@@ -29,8 +34,12 @@ const App: React.FC = () => {
     <TextField {...params} label="Name" />
   ), []);
 
+  if (error) {
+    return <div className="App">Error: {error.message}</div>;
+  }
+
   if (users.length === 0) {
-    return <div>Loading...</div>;
+    return <div className="App">Loading...</div>;
   }
 
   return (
